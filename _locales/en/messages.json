@@ -1,0 +1,11 @@
+{
+  "extensionName": {
+    "message": "Bomb Party Buddy",
+    "description": "Extension name"
+  },
+
+  "extensionDescription": {
+    "message": "Helps you in bomb party by typing words for you!",
+    "description": "Extension description"
+  }
+}
