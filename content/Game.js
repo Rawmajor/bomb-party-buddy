@@ -1,62 +1,67 @@
 class Game {
-  static keyNeighbours = {
-    en: {
-      a: ["q", "w", "s", "z"],
-      b: ["g", "h", "v", "n"],
-      c: ["d", "f", "x", "v"],
-      d: ["e", "r", "s", "f", "x", "c"],
-      e: ["w", "r", "s", "d"],
-      f: ["r", "t", "d", "g", "c", "v"],
-      g: ["t", "y", "f", "h", "v", "b"],
-      h: ["y", "u", "g", "j", "b", "n"],
-      i: ["u", "o", "j", "k"],
-      j: ["u", "i", "h", "k", "n", "m"],
-      k: ["i", "o", "j", "l", "m"],
-      l: ["o", "p", "k"],
-      m: ["j", "k", "n"],
-      n: ["h", "j", "b", "m"],
-      o: ["i", "p", "k", "l"],
-      p: ["o", "l"],
-      q: ["w", "a"],
-      r: ["e", "t", "d", "f"],
-      s: ["w", "e", "a", "d", "z", "x"],
-      t: ["r", "y", "f", "g"],
-      u: ["y", "i", "h", "j"],
-      v: ["f", "g", "c", "b"],
-      w: ["q", "e", "a", "s"],
-      x: ["s", "d", "z", "c"],
-      y: ["t", "u", "g", "h"],
-      z: ["a", "s", "x"],
-    },
-    fr: {
-      a: ["z", "q"],
-      b: ["g", "h", "v", "n"],
-      c: ["d", "f", "x", "v"],
-      d: ["e", "r", "s", "f", "x", "c"],
-      e: ["z", "r", "s", "d"],
-      f: ["r", "t", "d", "g", "c", "v"],
-      g: ["t", "y", "f", "h", "v", "b"],
-      h: ["y", "u", "g", "j", "b", "n"],
-      i: ["u", "o", "j", "k"],
-      j: ["u", "i", "h", "k", "n"],
-      k: ["i", "o", "j", "l"],
-      l: ["o", "p", "k", "m"],
-      m: ["o", "p", "l"],
-      n: ["h", "j", "b"],
-      o: ["i", "p", "k", "l"],
-      p: ["o", "l", "m"],
-      q: ["a", "z", "s", "w"],
-      r: ["e", "t", "d", "f"],
-      s: ["z", "e", "q", "d", "w", "x"],
-      t: ["r", "y", "f", "g"],
-      u: ["y", "i", "h", "j"],
-      v: ["f", "g", "c", "b"],
-      w: ["q", "s", "x"],
-      x: ["s", "d", "w", "c"],
-      y: ["t", "u", "g", "h"],
-      z: ["a", "e", "q", "s"],
-    },
-  };
+  static getKeyNeighbours(lang) {
+    const keyNeighbours = {
+      en: {
+        a: ["q", "w", "s", "z"],
+        b: ["g", "h", "v", "n"],
+        c: ["d", "f", "x", "v"],
+        d: ["e", "r", "s", "f", "x", "c"],
+        e: ["w", "r", "s", "d"],
+        f: ["r", "t", "d", "g", "c", "v"],
+        g: ["t", "y", "f", "h", "v", "b"],
+        h: ["y", "u", "g", "j", "b", "n"],
+        i: ["u", "o", "j", "k"],
+        j: ["u", "i", "h", "k", "n", "m"],
+        k: ["i", "o", "j", "l", "m"],
+        l: ["o", "p", "k"],
+        m: ["j", "k", "n"],
+        n: ["h", "j", "b", "m"],
+        o: ["i", "p", "k", "l"],
+        p: ["o", "l"],
+        q: ["w", "a"],
+        r: ["e", "t", "d", "f"],
+        s: ["w", "e", "a", "d", "z", "x"],
+        t: ["r", "y", "f", "g"],
+        u: ["y", "i", "h", "j"],
+        v: ["f", "g", "c", "b"],
+        w: ["q", "e", "a", "s"],
+        x: ["s", "d", "z", "c"],
+        y: ["t", "u", "g", "h"],
+        z: ["a", "s", "x"],
+      },
+      fr: {
+        a: ["z", "q"],
+        b: ["g", "h", "v", "n"],
+        c: ["d", "f", "x", "v"],
+        d: ["e", "r", "s", "f", "x", "c"],
+        e: ["z", "r", "s", "d"],
+        f: ["r", "t", "d", "g", "c", "v"],
+        g: ["t", "y", "f", "h", "v", "b"],
+        h: ["y", "u", "g", "j", "b", "n"],
+        i: ["u", "o", "j", "k"],
+        j: ["u", "i", "h", "k", "n"],
+        k: ["i", "o", "j", "l"],
+        l: ["o", "p", "k", "m"],
+        m: ["o", "p", "l"],
+        n: ["h", "j", "b"],
+        o: ["i", "p", "k", "l"],
+        p: ["o", "l", "m"],
+        q: ["a", "z", "s", "w"],
+        r: ["e", "t", "d", "f"],
+        s: ["z", "e", "q", "d", "w", "x"],
+        t: ["r", "y", "f", "g"],
+        u: ["y", "i", "h", "j"],
+        v: ["f", "g", "c", "b"],
+        w: ["q", "s", "x"],
+        x: ["s", "d", "w", "c"],
+        y: ["t", "u", "g", "h"],
+        z: ["a", "e", "q", "s"],
+      },
+    };
+
+    if (lang in keyNeighbours) return keyNeighbours[lang];
+    else return keyNeighbours["en"];
+  }
 
   constructor(inputNode) {
     this.input = inputNode;
@@ -67,6 +72,7 @@ class Game {
     const langCodes = {
       English: "en",
       French: "fr",
+      Spanish: "es",
     };
 
     if (!language in langCodes) {
@@ -85,6 +91,8 @@ class Game {
       url = chrome.runtime.getURL("../words/en.txt");
     } else if (lang == "fr") {
       url = chrome.runtime.getURL("../words/fr.txt");
+    } else if (lang == "es") {
+      url = chrome.runtime.getURL("../words/es.txt");
     }
 
     let words = {};
@@ -131,9 +139,10 @@ class Game {
     }
 
     let inputLetter = word[0];
-    const isMistake = inputLetter in Game.keyNeighbours[this.lang] && Math.random() < 0.1;
+    const isMistake =
+      inputLetter in Game.getKeyNeighbours(this.lang) && Math.random() < 0.1;
     if (isMistake) {
-      const neighbours = Game.keyNeighbours[this.lang][inputLetter];
+      const neighbours = Game.getKeyNeighbours(this.lang)[inputLetter];
       inputLetter = neighbours[Math.floor(Math.random() * neighbours.length)];
     }
     this.input.value += inputLetter;
